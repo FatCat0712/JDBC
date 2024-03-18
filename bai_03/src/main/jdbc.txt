@@ -1,0 +1,94 @@
+JDBC là gì ?
+
+Java Database Connectivity (JDBC) là một API được thiết kế dành riêng cho ngôn ngữ lập trình Java hỗ trợ Java trong việc truy cập cơ sở dữ liệu. Nó gồm những phương thức thực hiện truy vấn và cập nhật CSDL gián tiếp qua Java.
+
+Difference between 4 types of JDBC driver
+
+* Mỗi hệ quản trị CSDL sẽ có các cấu trúc jdbc driver khác nhau
+
++ MySQL : https://dev.mysql.com/downloads/connector/j/
+
++ SQL Server : https://learn.microsoft.com/vi-vn/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-ver16
+
++ Oracle : https://www.oracle.com/database/technologies/appdev/jdbc-downloads.html
+
+* Cách kết nối với CSDL
+
+_ Thông số cơ bản
+
+MySQL Database:	
+
+	DBMS: MySQL Server 5.0
+	Vendor: Oracle Corporation
+	Web Site: http://www.oracle.com
+	Driver Type: JDBC Driver ( Pure Java)
+	URL Format: jdbc:mySQL://<server>:port/<database>?<props>
+	URL Example: jdbc:mySQL://HYE6754:3306/chanda
+	Driver Class: com.mySQL.jdbc.Driver
+
+Oracle Database:
+	
+	DBMS: Oracle 10g Vendor: Oracle Corporation
+	Web Site: http://www.oracle.com
+	Driver Type: JDBC Driver ( thin - Pure Java)
+	URL Format: jdbc:oracle:thin:@<server>:<port>:<database>:<props>
+	URL Example : jdbc:oracle:thin:@localhost:1521:chanda
+	Driver Class : oracle.jdbc.driver.OracleDriver
+
+SQL Server
+
+	// Driver 1
+	DBMS: SQL Server
+	Vendor: Microsoft Corporation
+	Web Site: http://www.microsoft.com
+	Driver Type: JDBC Driver ( Pure Java)
+	URL Format: jdbc:SQLserver://<server>:<port>
+	URL Example: jdbc:SQLserver://HYE6754:1433;Database=chanda
+	Driver Class: com.microsoft.SQLserver.jdbc.SQLServerDriver
+
+	// Driver 2
+	DBMS: SQL Server
+	Vendor : SourceForge Inc.
+	Web Site: http://www.sourceforge.net
+	Driver Type: JDBC Driver (Pure Java)
+	URL Format: jdbc:jtds:<server_type>://<server>:<port>/<database>;<pros>
+	URL Example: jdbc:jtds:sqlserver://HYE6754:1433/chanda
+	Driver Class: net.sourceforge.jtds.jdbc.Driver
+
+* Cách kết nối
+
++ Các bước:
+	
+1:	_ Tải về trình điều khiển JDBC và thêm nó vào đường dẫn mô-đun khi bạn chạy các chương trình Java.
+
+2:	_ Trong JDK8 trở về trước, cần đăng ký trình điều khiển JDBC với DriverManager. Từ JDK9, bạn không cần thực hiện bước này. Nếu bạn đã đặt JAR hoặc JAR mô-đun cho JDBC của mình trình điều khiển trên đường dẫn mô-đun, cơ nhà cung cấp dịch vụ trong JDK8 sẽ đăng ký trình điều khiển JDBC tự động cho bạn.
+
+// Register the Oracle JDBC driver with DriverManager
+DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+
+// Register the Apache Derby embedded driver
+DriverManager.registerDriver(new org.apache.derby.jdbc.EmbeddedDriver());
+
+// Register the Apache Derby network client driver
+DriverManager.register(new org.apache.derby.jdbc.ClientDriver());
+
+
+3:
+	_ Xây dựng một URL kết nối
+ Cần có
+	+ Link của Database
+	+ Port
+	+ Database
+	+ Username
+	+ Password
+
+jdbc:mySQL://localhost:3306/chanda?user=app&password=app
+jdbc:db2://localhost:5012/chandaDB:user=admin;password=secret;
+
+* Khi thao tác xong với CSDL hãy ngắt kết nối
+
+
+
+
+	
+	
