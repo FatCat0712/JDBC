@@ -1,0 +1,7 @@
+DAO Pattern là gì ?
+
+Data Access Object (DAO) Pattern là một trong những Pattern thuộc nhóm cấu trúc ( Structural Pattern). Mẫu thiết kế DAO được sử dụng để phân tách logic lưu trữ dữ liệu trong một lớp riêng biệt. Theo cách này, các service được che dấu về các hoạt động cấp thấp để truy cập CSDL được thực hiện. Nó còn được gọi là nguyên tắc tách logic (Seperation of logic).
+
+Ý tưởng là thay vì có logic giao tiếp trực tiếp với cơ sở dữ liệu, hệ thống file, dịch vụ web hoặc bất kỳ cơ chế lưu trữ nào mà ứng dụng cần sử dụng, chúng ta sẽ để logic này giao tiếp gián tiếp với lớp trung gian DAO. Lớp DAO này sau đó giao tiếp với hệ thống lưu trữ, hệ quản trị CSDL, như thực hiện các công việc liên quan đến lưu trữ và truy vấn dữ liệu (tìm, kiếm , thêm, xóa, sửa, ... )
+
+DAO dựa trên các nguyên tắc thiết kế abstraction và encapsulaion. Nó bảo vệ phần còn lại của ứng dụng khỏi mọi thay đổi trong lớp lưu trữ. Ví dụ: thay đổi database tử Oracle sang MySQl, thay đổi công nghệ lưu trữ từ file sang database.
