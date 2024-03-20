@@ -1,0 +1,15 @@
+ORM và JPA
+
+* ORM (Object-Relational Mapping):
+
++ Là một kỹ thuật để định nghĩa một sự ánh xạ giữa các đối tượng trong mô hình đối tượng và các bảng trong cơ sở dữ liệu.
+
++ ORM có nhiệm vụ chuyển đổi giữa các lệnh truy vấn cơ sở dữ liệu và các đối tượng trong mô hình đối tượng, giúp bạn có thể làm việc với cơ sở dữ liệu bằng cách sử dụng các đối tượng trong ngôn ngữ lập trình của bạn, thay vì phải viết các câu truy vấn SQL thủ công.
+
++ ORM có thể giúp bạn giảm số lượng mã lệnh cần thiết, tăng tính khả dụng và tính bảo mật của hệ thống, giúp bạn dễ dàng chuyển đổi giữa các loại cơ sở dữ liệu khác nhau. JPA là một ví dụ của một ORM được sử dụng trong Java.
+
+*JPA ( Java Persistence API):
+
++ Là một chuẩn để lưu trữ dữ liệu trong Java. Nó cung cấp một cách để tương tác với các cơ sở dữ liệu qua Java Persistence Query Language (JPQL), cũng như cung cấp các lớp hỗ trợ cho việc tự động hóa việc lưu trữ và truy vấn dữ liệu.
+
++ JPA là một phần của Java Enterprise Edition( Java EE) và có thể được sử dụng trong bất kỳ ứng dụng Java nào. Nó cũng có thể được sử dụng trong các ứng dụng Java Standard Edition (Java SE) bằng cách sử dụng thư việc JPA tách rời.
