@@ -1,0 +1,42 @@
+* Tạo dự án đơn giản và cấu hình
+
++ Bước 1: Chuẩn bị cơ sở dữ liệu
+
++ Bước 2: Tạo project maven
+	. Chọn architectype quickstart 1.4
+	. Thêm các thư viện vào file pom( phần depedencies)
+
+	. Vào trang maven repository để lấy các thư viện
+	+ hibernate-core
+	+ mysql-connector (mysql) hoặc jdts (SQL Server)
+	=> nên chọn những phiên bản final
+
++ Bước 3: Tạo Entity
+
+* annotation: 
+
+@Entity: đây là từ khóa để khai báo một đối tượng sẽ được ánh xạ xuống cơ sở dữ liệu
+
+@Table: dùng để khai báo các thuộc tính cho một bảng(name, constraints)
+
+@Inheritance: khai báo cho superclass dùng trong lưu các đối tượng có quan hệ kế thừa
+
+@Id: khai báo một thuộc tính sẽ là khóa chính trong bảng
+
+@Column: khai báo các thuộc tính liên quan đến một cột trong bảng.
+
+@Transient: quy định cho HA không lưu thuộc tính này xuống CSDL
+
+@JoinColumn: dùng để khai báo một thuộc tính là khóa ngoại (reference key)
+
+@OneToMany: dùng để khai báo trong quan hệ one to many
+
+@ManyToOne: dùng để khai báo trong quan hệ many to one
+
+@ManyToMany: dùng để khai báo trong quan hệ many to many
+
++ Bước 4: Tạo file cấu hình hibernate.cfg.xml
+
++ Bước 5: Tạo file HibernateUtil
+
+
