@@ -1,0 +1,13 @@
+Là một ngôn ngữ truy vấn được sử dụng trong Hibernate.
+
++ Từ khóa SELECT dùng để chỉ ra các trường mà bạn muốn truy vấn.
+
++ Từ khóa FROM dùng để chỉ ra lớp đối tượng mà bạn muốn truy vấn.
+
++ Từ khóa WHERE dùng để chỉ ra điều kiện cho các kết quả truy vấn.
+
++ Từ khóa GROUP BY dùng để nhóm các kết quả truy vấn theo một trường nhất định.
+
++ Từ khóa HAVING dùng để chỉ ra điều kiện cho các nhóm được tạo bởi từ khóa GROUP BY.
+
++ Từ khóa ORDER BY dùng để sắp xếp các kết quả truy vấn theo thứ tự nhất định.
