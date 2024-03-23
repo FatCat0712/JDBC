@@ -1,0 +1,17 @@
+* Kế thừa
+
+Hibernate có 3 cách mapping là:
+
++ Map tất cả dữ liệu xuống duy nhất một table
+
++ Map riêng lớp cha và các lớp con, khi đó trong table của lớp con sẽ chứa khóa của lớp cha.
+
++ Không map dữ liệu trong lớp cha mà đưa thẳng dữ liệu trong lớp cha về các lớp con. Khi đó có bao nhiêu lớp con sẽ có bấy nhiêu table.
+
+Lớp cha phải được khai báo @Inheritance
+
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+
+@Inheritance(strategy = InheritanceType.JOINED)
+
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
