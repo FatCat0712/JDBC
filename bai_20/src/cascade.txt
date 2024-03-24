@@ -1,0 +1,57 @@
+* Định nghĩa
+
+Cascade là một tính năng giúp quản lý trạng thái của các đối tượng trong một mối quan hệ một cách tự động
+
+* Khi nào nên sử dụng cascade
+
++ Lưu ý rằng chính việc tự động update các bản ghi đang tham chiếu tới khiến cho hiệu năng bị giảm xuống cho nên tùy trường hợp mà ta áp dụng nó.
+
++ Ví dụ theo logic thông thường, khi xóa 1 company thì ta sẽ xóa tất cả các employees đang tham chiếu tới nó trước rồi sau đấy mới xóa company đó chứ không thực hiện xóa company trước rồi sử dụng cascade để xóa các employee đang tham chiếu tới.
+
++ Sử dụng cascade trong các trường hợp dữ liệu tham chiếu ít, các dữ liệu tham chiếu chỉ có ý nghĩa khi gắn liền với đối tượng tham chiếu.
+
++ Ví dụ một người có nhiều tên ( các tên đó chỉ gắn với người đó), thì khi xóa người đó đi thì ta sẽ xóa luôn các tên đó ( vì nếu giữ lại nó sẽ không có tác dụng) -> trường hợp này dùng cascade.
+
+* Các kiểu Cascade JPA
+
+Tất cả các hoạt động cascade cụ thể của JPA được biểu diễn bằng enum javax.persistence.CascadeType chứa các mục:
+
++ ALL (DETACH, MERGE, PERSIST, REFRESH, REMOVE)
+
++ PERSIST
+
++ REMOVE
+
++ REFRESH
+
++ DETACH
+
+
+* Sự khác biệt giữa các loại cascade
+
++ CascadeType.ALL : truyền tất cả các hoạt động - bao gồm cả những hoạt động dành riêng cho chế độ Hibernate - từ thực thể cha sang thực thể con.
+
++ CascadeType.PERSIST : làm cho một phiên bản tạm thời tồn tại lâu dài, kiểu Cascade PERSIST truyền tải họa động liên tục tù thực thể cha sang thực thể con.
+Khi chúng ta lưu thực thể Persons, thì thực thể Address cũng sẽ được lưu.
+
++ CascadeType.MERGE: sao chép trạng thái của đối tượng đã cho vào đối tượng Persist có cùng định danh. CascadeType.MERGE truyền hoạt động hợp nhất từ thực thể cha sang thực thể con.
+
++ CascadeType.REMOVE: khi một entity bị xóa khỏi database thì các related entity cũng bị xóa theo
+
++ CascadeType.DETACHED: dùng để xóa một entity ra khỏi persistent context. Khi sử dụng Cascade.REMOVE các related entity với nó cũng sẽ bị loại bỏ khỏi persistence context.
+
++ CascadeType.REFRESH: trong một số trường hợp bạn đã thay đổi thuộc tính của một persistent entity, nhưng loại muốn quay lại trạng thái ban đầu thì có thể sử dụng CascadeType.REFRESH. Hibernate thực hiện truy vấn và lấy dữ liệu từ database ghi đè lên các giá trị hiện có của entity. Hay một trường hợp khác chúng ta có một transaction tồn tại trong một thời gian rất lâu, trong khoảng thời gian đó có thể có các luồng khác của ứng dụng đã thay đổi giá trị của một entity đang được nắm giữ, sử dung CascadeType.REFRESH trong trường hợp này để có thể cập nhật giá trị mới nhất của entity
+
+
+
+
+
+
+
+
+
+
+
+
+
+
