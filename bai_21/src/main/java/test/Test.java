@@ -16,11 +16,11 @@ import util.HibernateUtils;
 
 public class Test {
 	public static void main(String[] args) {
-		SessionFactory sessionFactory = HibernateUtils.getSessionFactory();
-		if(sessionFactory != null) {
-			Session session = sessionFactory.openSession();
-			try {
-				Transaction tr = session.beginTransaction();
+//		SessionFactory sessionFactory = HibernateUtils.getSessionFactory();
+//		if(sessionFactory != null) {
+//			Session session = sessionFactory.openSession();
+//			try {
+//				Transaction tr = session.beginTransaction();
 //				Orders o1 = new Orders();
 //				o1.setId(1);
 //				o1.setTenKhachHang("Mai Son Hai");
@@ -39,20 +39,21 @@ public class Test {
 //				
 //				session.save(o1);
 				
-				Orders o2 = new Orders();
-				long batDau = System.currentTimeMillis();
-				o2 = session.load(Orders.class, 1);
-				Set<OrderDetails> ods = o2.getDanhSachChiTiet();
-				long ketThuc = System.currentTimeMillis();
+//				Orders o2 = new Orders();
+//				long batDau = System.currentTimeMillis();
+//				o2 = session.load(Orders.class, 1);
+//				Set<OrderDetails> ods = o2.getDanhSachChiTiet();
+//				long ketThuc = System.currentTimeMillis();
 //				for(OrderDetails o: ods) {
 //					System.out.println(o);
 //				}
-				System.out.println("takes: "+(ketThuc - batDau));
-				System.out.println(o2);
-				tr.commit();
-			} finally {
-				session.close();
-			}
-		}
+//				System.out.println("takes: "+(ketThuc - batDau));
+//				System.out.println(o2);
+//				tr.commit();
+//			} finally {
+//				session.close();
+//			}
+//		}
+		System.out.println(org.hibernate.Version.getVersionString());		
 	}
 }
